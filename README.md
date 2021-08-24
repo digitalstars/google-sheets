@@ -31,15 +31,15 @@ $sheet = DSheets::create($spreadsheet_id, $config_path)->setSheet('Лист');
 ### Выгрузка данных
 ```php
 $data = $sheet->get(); //выгрузит все данные в листе
-print_r($data)
+print_r($data);
 // [
 //   ['id', 'name', 'mail'],
 //   ['1', 'name1', 'mail1'],
 //   ['2', 'name1', 'mail2']
 // ]
 
-$data = $sheet->setSheet('Лист2')->get('A:A') //выгрузит весь столбец А из Лист2
-print_r($data)
+$data = $sheet->setSheet('Лист2')->get('A:A'); //выгрузит весь столбец А из Лист2
+print_r($data);
 // [
 //   ['id'],
 //   ['1']
@@ -47,7 +47,7 @@ print_r($data)
 // ]
 
 $data = $sheet->get('A2:B3'); //выгрузит диапазон A2:B3
-print_r($data)
+print_r($data);
 // [
 //   ['1', 'name1'],
 //   ['2', 'name1']
