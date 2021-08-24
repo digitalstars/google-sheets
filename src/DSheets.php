@@ -4,7 +4,7 @@ namespace DigitalStars\Sheets;
 use Google\Service\Sheets\ValueRange;
 use Google\Client as Google_Client;
 
-class Sheets {
+class DSheets {
     private $service;
     private $spreadsheet_id;
     private $path_to_config;

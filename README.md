@@ -20,12 +20,12 @@ $config_path = 'fire-322212-c5306b491ecc.json';
 ```php
 <?php
 require_once 'vendor/autoload.php';
-use DigitalStars\Sheets\Sheets;
+use DigitalStars\Sheets\DSheets;
 
 $spreadsheet_id = '1FpDbHUknChjWzioeTrddMur-d_tSl7E_-tKCqn9xW6o';
 $config_path = 'fire-322212-c5306b491ecc.json';
 
-$sheet = Sheets::create($spreadsheet_id, $config_path)->setSheet('Лист');
+$sheet = DSheets::create($spreadsheet_id, $config_path)->setSheet('Лист');
 ```
 
 ### Выгрузка данных
