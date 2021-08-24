@@ -1,0 +1,32 @@
+{
+    "name": "digitalstars/google-sheets",
+    "description": "Library for easy work with google-sheets",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "ZeRoX"
+        },
+        {
+            "name": "Runnin"
+        }
+    ],
+    "require": {
+        "google/apiclient": "^2.10",
+        "php": ">=7.0",
+        "ext-curl": "*"
+    },
+    "scripts": {
+        "pre-autoload-dump": "Google\\Task\\Composer::cleanup"
+    },
+    "extra": {
+        "google/apiclient-services": [
+            "Sheets"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "DigitalStars\\Sheets\\": "src/"
+        }
+    }
+}
