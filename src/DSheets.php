@@ -34,19 +34,22 @@ class DSheets {
     }
 
     public function get($range = '') {
-        return $this->service->spreadsheets_values->get($this->spreadsheet_id, $this->sheet."!".$range)['values'];
+        $range = $range ? "!$range" : '';
+        return $this->service->spreadsheets_values->get($this->spreadsheet_id, $this->sheet.$range)['values'];
     }
 
     public function append($values, $range = '') {
+        $range = $range ? "!$range" : '';
         $body = new ValueRange(['values' => $values]);
         $options = ['valueInputOption' => 'RAW'];
-        $this->service->spreadsheets_values->append( $this->spreadsheet_id, $this->sheet."!".$range, $body, $options);
+        $this->service->spreadsheets_values->append( $this->spreadsheet_id, $this->sheet.$range, $body, $options);
     }
 
     public function update($values, $range = '') {
+        $range = $range ? "!$range" : '';
         $body = new ValueRange(['values' => $values]);
         $options = ['valueInputOption' => 'RAW'];
-        $this->service->spreadsheets_values->update($this->spreadsheet_id, $this->sheet."!".$range, $body, $options);
+        $this->service->spreadsheets_values->update($this->spreadsheet_id, $this->sheet.$range, $body, $options);
     }
 
     private function googleTableAuth() { //получение объекта для работы с гугл таблицами
